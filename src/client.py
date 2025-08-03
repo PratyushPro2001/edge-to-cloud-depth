@@ -2,7 +2,8 @@ import cv2
 import requests
 import numpy as np
 
-SERVER_URL = "https://9f2516dc7e7b.ngrok-free.app/predict"
+# Replace with your actual ngrok URL (with /predict)
+SERVER_URL = "https://--------------.ngrok-free.app/predict"
 
 cap = cv2.VideoCapture(0)
 
@@ -23,6 +24,7 @@ while True:
                 cv2.IMREAD_COLOR
             )
 
+            # Resize depth to match webcam size if needed
             depth_map = cv2.resize(depth_map, (500 , 320))
             combined = cv2.vconcat([frame, depth_map])
             cv2.imshow("Depth Viewer", combined)
