@@ -12,7 +12,7 @@ while True:
     if not ret:
         break
 
-    frame = cv2.resize(frame, (1000, 600))
+    frame = cv2.resize(frame, (1000, 640))
     _, img_encoded = cv2.imencode('.jpg', frame)
 
     try:
@@ -25,7 +25,7 @@ while True:
             )
 
             # Resize depth to match webcam size if needed
-            depth_map = cv2.resize(depth_map, (500 , 320))
+            depth_map = cv2.resize(depth_map, (1000, 640))
             combined = cv2.vconcat([frame, depth_map])
             cv2.imshow("Depth Viewer", combined)
 
