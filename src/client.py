@@ -12,7 +12,7 @@ while True:
     if not ret:
         break
 
-    frame = cv2.resize(frame, (500, 300))
+    frame = cv2.resize(frame, (1000, 600))
     _, img_encoded = cv2.imencode('.jpg', frame)
 
     try:
